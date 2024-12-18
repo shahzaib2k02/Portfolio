@@ -2,7 +2,22 @@ import pro1 from '../assets/pro1.jpeg';
 import pro2 from '../assets/pro2.png';
 import pro3 from '../assets/pro3.jpg';
 
-const ProjectCardData = [
+export const ProjectCardData = [
+    {
+        title: "Project Name",
+        description: "Detailed project description",
+        technologies: ["React", "Node.js", "MongoDB"],
+        liveDemo: "https://demo-link.com",
+        sourceCode: "https://github.com/your-username/project",
+        image: "./project-image.jpg",
+        highlights: [
+            "Key achievement 1",
+            "Key achievement 2",
+            "Key achievement 3"
+        ],
+        role: "Lead Developer",
+        duration: "3 months"
+    },
     {
         imgsrc: pro1,
         title: 'Matrimonial Website',
