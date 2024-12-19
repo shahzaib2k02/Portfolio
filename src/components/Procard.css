@@ -1,6 +1,8 @@
 .project-heading{
     text-align: center;
     padding: 4rem 0 2rem 0;
+    font-size: 2.5rem;
+    color: #fff;
 }
 
 .project-container{
@@ -9,42 +11,114 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
-    padding-bottom: 5rem;
+    padding: 0 2rem 5rem 2rem;
 }
 
 .project-card{
-    background: #1a1919;
-    padding: 1.2rem 1rem;
+    background: rgba(26, 25, 25, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .project-card img{
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img{
+    transform: scale(1.1);
 }
 
 .project-title{
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #1a8cff;
+}
+
+.pro-details{
+    padding: 1rem;
 }
 
 .pro-details p{
     padding-bottom: 1rem;
     font-size: 1.1rem;
-    text-align: justify;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.technologies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag{
+    background: rgba(26, 140, 255, 0.1);
+    color: #1a8cff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover{
+    background: rgba(26, 140, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .pro-btns{
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .pro-btns .btn{
-    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
 }
+
+.pro-btns .btn svg{
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1040px) {
+    .project-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 640px) {
     .project-container{
-        max-width: 90%;
-        margin: auto;
         grid-template-columns: 1fr;
+    }
+    
+    .project-heading {
+        font-size: 2rem;
+        padding: 3rem 0 1.5rem 0;
+    }
+    
+    .pro-btns {
+        flex-direction: column;
+    }
+    
+    .tech-tag {
+        font-size: 0.8rem;
     }
 }

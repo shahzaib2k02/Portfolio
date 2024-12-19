@@ -1,62 +1,99 @@
-.mask{
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.mask {
     width: 100%;
     height: 100vh;
     position: relative;
 }
 
-.intro-img{
+.intro-img {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    object-fit: cover;    
+    object-fit: cover;
 }
 
-.mask::after{
-    content: "";
-    width: 100%;
-    height: 100%;
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #000;
-    opacity: 0.8;
-}
-
-.hero{
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.hero .content{
+.content {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     text-align: center;
+    width: 100%;
 }
 
-.hero .content h1{
-    font-size: 4rem;
-    padding: 0.6rem 0 1.5rem;
-}
-
-.hero .content p{
+.greeting {
     font-size: 1.4rem;
     font-weight: 200;
     text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    color: #fff;
 }
 
-.content .btn{
-    margin: 1rem 0.2rem;
+.typing-text {
+    font-size: 4rem;
+    font-weight: 700;
+    padding: 0.5rem 0 1.5rem;
+    color: #fff;
+    min-height: 80px;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1a8cff;
+    transform: translateY(-3px);
 }
 
 @media screen and (max-width: 640px) {
-    .hero .content h1{
-        font-size: 3rem;
+    .typing-text {
+        font-size: 2.5rem;
     }
-    
-    .hero .content p{
-        font-size: 1.4rem;
+
+    .intro-text {
+        font-size: 1.2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        padding: 0 1rem;
     }
 }
