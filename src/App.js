@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import './index.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Loading from './components/Loading';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -12,7 +12,7 @@ const Project = lazy(() => import('./routes/Project'));
 
 function App() {
   return (
-    <>
+    <Router basename="/Portfolio">
       <Suspense fallback={<Loading />}>
         <ScrollToTop />
         <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/project" element={<Project />} />
         </Routes>
       </Suspense>
-    </>
+    </Router>
   );
 }
 

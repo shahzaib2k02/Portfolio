@@ -17,15 +17,7 @@ const Herosec = () => {
         "UI/UX Designer"
     ];
 
-    useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, typingSpeed);
-
-        return () => clearInterval(ticker);
-    }, [text, isDeleting]);
-
-    const tick = () => {
+    const tick = React.useCallback(() => {
         let i = loopNum % words.length;
         let fullText = words[i];
         let updatedText = isDeleting 
@@ -46,7 +38,15 @@ const Herosec = () => {
             setLoopNum(loopNum + 1);
             setTypingSpeed(150);
         }
-    };
+    }, [isDeleting, loopNum, text.length, words]);
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, typingSpeed);
+
+        return () => clearInterval(ticker);
+    }, [text, isDeleting, typingSpeed, tick]);
 
     return (
         <div className='hero'>
