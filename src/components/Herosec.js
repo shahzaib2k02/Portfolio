@@ -1,5 +1,5 @@
-import './Herosec.css'
-import React, { useState, useEffect } from 'react'
+import './Herosec.css';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import introimg from '../assets/pic5.jpg';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -10,14 +10,15 @@ const Herosec = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const words = [
+    // Memoize the words array to prevent it from being recreated on every render
+    const words = useMemo(() => [
         "MERN Stack Developer",
         "Frontend Developer",
         "Backend Developer",
         "UI/UX Designer"
-    ];
+    ], []);
 
-    const tick = React.useCallback(() => {
+    const tick = useCallback(() => {
         let i = loopNum % words.length;
         let fullText = words[i];
         let updatedText = isDeleting 
@@ -75,7 +76,7 @@ const Herosec = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Herosec
+export default Herosec;
