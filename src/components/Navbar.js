@@ -1,44 +1,80 @@
 import './Navbar.css';
-
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-
     const [click, setClick] = useState(false);
     const [color, setColor] = useState(false);
+    const location = useLocation();
+
     const handleClick = () => setClick(!click);
-    const chnageColor = () => {
+    const closeMenu = () => setClick(false);
+
+    const changeColor = () => {
         if(window.scrollY >= 100){
             setColor(true);
         }else{
             setColor(false);
         }
     };
-    window.addEventListener('scroll', chnageColor);
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeColor);
+        return () => {
+            window.removeEventListener('scroll', changeColor);
+        };
+    }, []);
 
     return (
         <div className={color ? 'header header-bg' : 'header'}>
-            <Link to="/">
-                <h1>SHM.</h1>
+            <Link to="/" className="logo">
+                <h1>SHM<span>.</span></h1>
             </Link>
-            <ul className={click ? ('nav-menu active') : ('nav-menu')}>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link 
+                        to="/" 
+                        className={location.pathname === "/" ? "active" : ""}
+                        onClick={closeMenu}
+                    >
+                        Home
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/project">Project</Link>
+                    <Link 
+                        to="/project" 
+                        className={location.pathname === "/project" ? "active" : ""}
+                        onClick={closeMenu}
+                    >
+                        Projects
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link 
+                        to="/about" 
+                        className={location.pathname === "/about" ? "active" : ""}
+                        onClick={closeMenu}
+                    >
+                        About
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link 
+                        to="/contact" 
+                        className={location.pathname === "/contact" ? "active" : ""}
+                        onClick={closeMenu}
+                    >
+                        Contact
+                    </Link>
                 </li>
             </ul>
             <div className='hamburger' onClick={handleClick}>
-                {click ? (<FaTimes size={20} style={{ color: "#fff" }} />) : (<FaBars size={20} style={{ color: "#fff" }} />)}
+                {click ? (
+                    <FaTimes size={20} style={{ color: "#fff" }} />
+                ) : (
+                    <FaBars size={20} style={{ color: "#fff" }} />
+                )}
             </div>
         </div>
     )

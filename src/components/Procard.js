@@ -1,36 +1,36 @@
 import './Procard.css'
 import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const Procard = (props) => {
+    const { 
+        imgsrc, 
+        title, 
+        description, 
+        technologies = [], 
+        github
+    } = props;
+
     return (
         <div className='project-card'>
-            <img src={props.imgsrc} alt='project' />
-            <h2 className='project-title'>{props.title}</h2>
-            <div className='pro-details'>
-                <p>{props.text}</p>
-                <div className='technologies'>
-                    {props.technologies && props.technologies.map((tech, index) => (
+            <img src={imgsrc} alt={title} />
+            <h2 className='project-title'>{title}</h2>
+            <div className='project-content'>
+                <p className='project-description'>{description}</p>
+                <div className='project-tech'>
+                    {technologies.map((tech, index) => (
                         <span key={index} className='tech-tag'>{tech}</span>
                     ))}
                 </div>
-                <div className='pro-btns'>
-                    <a 
-                        href={props.view} 
-                        className='btn'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <FaGithub /> Source Code
-                    </a>
-                    {props.demo && (
+                <div className='project-links'>
+                    {github && (
                         <a 
-                            href={props.demo} 
-                            className='btn btn-light'
+                            href={github}
+                            className='project-link'
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            <FaExternalLinkAlt /> Live Demo
+                            <FaGithub /> Source Code
                         </a>
                     )}
                 </div>

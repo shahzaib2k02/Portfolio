@@ -1,5 +1,5 @@
 import './Herosec.css';
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import introimg from '../assets/pic5.jpg';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -10,15 +10,21 @@ const Herosec = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    // Memoize the words array to prevent it from being recreated on every render
-    const words = useMemo(() => [
+    const words = [
         "MERN Stack Developer",
         "Frontend Developer",
-        "Backend Developer",
-        "UI/UX Designer"
-    ], []);
+        "Backend Developer"
+    ];
 
-    const tick = useCallback(() => {
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, typingSpeed);
+
+        return () => clearInterval(ticker);
+    }, [text, isDeleting]);
+
+    const tick = () => {
         let i = loopNum % words.length;
         let fullText = words[i];
         let updatedText = isDeleting 
@@ -39,15 +45,7 @@ const Herosec = () => {
             setLoopNum(loopNum + 1);
             setTypingSpeed(150);
         }
-    }, [isDeleting, loopNum, text.length, words]);
-
-    useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, typingSpeed);
-
-        return () => clearInterval(ticker);
-    }, [text, isDeleting, typingSpeed, tick]);
+    };
 
     return (
         <div className='hero'>

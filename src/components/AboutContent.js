@@ -10,32 +10,13 @@ const AboutContent = () => {
     <div className='about'>
       <div className='left'>
         <h1>Who Am I?</h1>
-        <div className='about-content'>
-          <p>I am a passionate MERN Stack Developer with expertise in building scalable web applications. My journey in web development started with a strong foundation in Computer Science, and I've since specialized in modern JavaScript technologies.</p>
-          
-          <div className='key-points'>
-            <h3>What I Offer:</h3>
-            <ul>
-              <li>Full-stack web development using MERN technologies</li>
-              <li>Responsive and mobile-first design implementation</li>
-              <li>RESTful API development and integration</li>
-              <li>Database design and optimization</li>
-              <li>Performance optimization and best practices</li>
-            </ul>
-          </div>
-
-          <div className='experience'>
-            <h3>Experience Highlights:</h3>
-            <ul>
-              <li>Developed multiple full-stack web applications</li>
-              <li>Collaborated with cross-functional teams</li>
-              <li>Implemented secure authentication systems</li>
-              <li>Optimized application performance</li>
-            </ul>
-          </div>
-        </div>
+        <p>
+          I am a MERN Stack Developer with a strong foundation in web development. 
+          Currently pursuing my Bachelor's in Software Engineering at FAST NUCES, I specialize in 
+          building full-stack web applications using modern technologies.
+        </p>
         <div className='cta-buttons'>
-          <Link to='/contact' className='btn'>Hire Me</Link>
+          <Link to='/project' className='btn'>View Projects</Link>
           <a href="/shahzaib_resume.pdf" className='btn btn-light' download>
             <FaDownload /> Resume
           </a>

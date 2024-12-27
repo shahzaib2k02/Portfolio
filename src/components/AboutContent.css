@@ -1,111 +1,77 @@
 .about {
     width: 100%;
-    padding: 6rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    max-width: 1140px;
-    margin: auto;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
 }
 
 .about .left {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    max-width: 600px;
 }
 
-.about h1 {
+.about .left p {
+    margin: 1.2rem 0;
     color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.about-content p {
-    color: #ddd;
     line-height: 1.8;
     font-size: 1.1rem;
 }
 
-.key-points, .experience {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.key-points h3, .experience h3 {
-    color: #1a8cff;
+.about h1 {
+    font-size: 2.5rem;
+    color: #fff;
     margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.key-points ul, .experience ul {
-    list-style: none;
-    padding: 0;
-}
-
-.key-points li, .experience li {
-    color: #ddd;
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.key-points li:before, .experience li:before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #1a8cff;
 }
 
 .cta-buttons {
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
-.cta-buttons .btn {
-    display: flex;
+.right {
+    max-width: 700px;
+}
+
+.right .img-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
     align-items: center;
-    gap: 0.5rem;
+    text-align: center;
 }
 
-/* Existing image container styles */
-.img-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.right .img {
+    max-width: 90%;
+    border: 1px solid #333;
 }
 
-.img-stack {
-    position: relative;
+.right .top {
+    grid-column: 1 / span 8;
+    grid-row: 1;
+    padding-top: 20%;
+    z-index: 6;
 }
 
-.img-stack.top {
-    z-index: 2;
-}
-
-.img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+.right .bottom {
+    grid-column: 4 / -1;
+    grid-row: 1;
+    z-index: 5;
 }
 
 @media screen and (max-width: 1040px) {
     .about {
-        grid-template-columns: 1fr;
-        padding: 4rem 1rem;
+        flex-direction: column;
     }
 
     .right {
-        margin-top: 2rem;
+        margin: 3rem 0;
     }
 }
 
@@ -116,5 +82,6 @@
 
     .cta-buttons {
         flex-direction: column;
+        padding: 0 1rem;
     }
 }
