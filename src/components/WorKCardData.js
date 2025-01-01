@@ -2,6 +2,7 @@ import pro1 from '../assets/pro1.jpeg';
 import pro2 from '../assets/pro2.png';
 import pro3 from '../assets/pro3.jpg';
 import pro4 from '../assets/pro4.png';
+import pro5 from '../assets/pro5.png';
 
 const ProjectCardData = [
     {
@@ -35,6 +36,14 @@ const ProjectCardData = [
         description: "A comprehensive AI-powered study assistant with personalized tools like automated quiz generation, notes summarization and video summarization.",
         technologies: ["Next.js", "Tailwind CSS", "LLM", "NLP", "Gemeni API", "OpenAI", "Flask"],
         github: "https://github.com/MuhdDaniyal/FYP",
+        featured: false
+    },
+    {
+        imgsrc: pro5,
+        title: "Game-Boy-Evolved",
+        description: "Game Boy having multiple games and a custom games like tic-tac-toe, rock-paper-scissors, and hangman. Calendar, Digital clock and Covid tracker",
+        technologies: ["C"],
+        github: "https://github.com/shahzaib2k02/GameBoyEvolved.git",
         featured: false
     }
 ];
