@@ -3,6 +3,7 @@ import pro2 from '../assets/pro2.png';
 import pro3 from '../assets/pro3.jpg';
 import pro4 from '../assets/pro4.png';
 import pro5 from '../assets/pro5.png';
+import pro6 from '../assets/pro6.jpg';
 
 const ProjectCardData = [
     {
@@ -45,7 +46,15 @@ const ProjectCardData = [
         technologies: ["C"],
         github: "https://github.com/shahzaib2k02/GameBoyEvolved.git",
         featured: false
-    }
+    },
+    {
+        imgsrc: pro6,
+        title: "Budget Planner",
+        description: "Budget tracker that helps you in financing your expenses, check on income, daily reports.",
+        technologies: ["Javafx, MySQL, Scene Builder"],
+        github: "https://github.com/shahzaib2k02/Budget-Planner.git",
+        featured: false
+    },
 ];
 
 export default ProjectCardData;
