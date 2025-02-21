@@ -1,6 +1,6 @@
 .skills-container {
     padding: 4rem 2rem;
-    background-color: #000;
+    background: linear-gradient(135deg, #1a1a1a, #333);
 }
 
 .skills-heading {

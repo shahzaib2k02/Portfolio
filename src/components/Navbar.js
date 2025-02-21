@@ -2,6 +2,7 @@ import './Navbar.css';
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
